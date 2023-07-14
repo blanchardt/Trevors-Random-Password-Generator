@@ -7,7 +7,7 @@ function generatePassword() {
   //check if user inputed a length
   if (length !== null) {
     //get an array of boolean values to determine what charaters the user wants.
-    //bool array = [lower case, uppercase, numbers, special characters]
+    //bool array = [lowercase, uppercase, numbers, special characters]
     var characters = passwordCharaterTypes();
     //ask user to confirm their selections
     passwordSelectionConfirmation(length, characters);
@@ -58,8 +58,23 @@ function passwordLength() {
 
 //create a function to ask the user a series of questions to determine how to generate the password.
 function passwordCharaterTypes() {
-  var test = window.confirm("hit ok for true and cancel for false.")
-  window.alert(test);
+  //run an infinite loop until a user hits ok to one of the 4 following prompts.
+  //loop will end when it hits a line that returns a value.
+  while(true) {
+    //get user input.
+    var lower = window.confirm("Would you like to have lowercase characters?  Hit ok for yes and cancel for no.");
+    var upper = window.confirm("Would you like to have uppercase characters?  Hit ok for yes and cancel for no.");
+    var numbers = window.confirm("Would you like to have numbers?  Hit ok for yes and cancel for no.");
+    var special = window.confirm("Would you like to have special characters?  Hit ok for yes and cancel for no.");
+    
+    //input validation, at least one ok was hit return an array.  otherwise let the user know and ask again.
+    if (lower || upper || numbers || special) {
+      return [lower, upper, numbers, special];
+    }
+    else {
+      window.alert("Can not generate a password with no characters.  Please answer those 4 prompts again.")
+    }
+  }
 }
 
 // Get references to the #generate element
