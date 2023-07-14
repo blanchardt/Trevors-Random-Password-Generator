@@ -69,10 +69,10 @@ function passwordCharaterTypes() {
   //loop will end when it hits a line that returns a value.
   while(true) {
     //get user input.
-    var lower = window.confirm("Would you like to have lowercase characters?  Hit ok for yes and cancel for no.");
-    var upper = window.confirm("Would you like to have uppercase characters?  Hit ok for yes and cancel for no.");
-    var numbers = window.confirm("Would you like to have numbers?  Hit ok for yes and cancel for no.");
-    var special = window.confirm("Would you like to have special characters?  Hit ok for yes and cancel for no.");
+    var lower = window.confirm("Would you like to have lowercase characters?  Hit Ok for yes and Cancel for no.");
+    var upper = window.confirm("Would you like to have uppercase characters?  Hit Ok for yes and Cancel for no.");
+    var numbers = window.confirm("Would you like to have numbers?  Hit Ok for yes and Cancel for no.");
+    var special = window.confirm("Would you like to have special characters?  Hit Ok for yes and Cancel for no.");
     
     //input validation, at least one ok was hit return an array.  otherwise let the user know and ask again.
     if (lower || upper || numbers || special) {
@@ -82,6 +82,15 @@ function passwordCharaterTypes() {
       window.alert("Can not generate a password with no characters.  Please answer those 4 prompts again.")
     }
   }
+}
+
+//ask the user to confirm there selection and return the value
+//characters = [lowercase, uppercase, numbers, special characters]
+function passwordSelectionConfirmation (length, characters) {
+  var message = "Please confirm that you want to create a password using the rules shown below.\n\nLength: " + length + "\n";
+  message += "Lowercase: " + characters[0] + "\nUppercase: " + characters[1] + "\nNumbers: " + characters[2] + "\nSpecial Characters: " + characters[3];
+  message += "\n\nHit Ok to confirm or Cancel to cancel.";
+  return window.confirm(message);
 }
 
 // Get references to the #generate element
