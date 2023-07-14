@@ -10,13 +10,20 @@ function generatePassword() {
     //bool array = [lowercase, uppercase, numbers, special characters]
     var characters = passwordCharaterTypes();
     //ask user to confirm their selections
-    passwordSelectionConfirmation(length, characters);
-  
-    //create password
-    return passwordCreation(length, characters); 
+    var confirmation = passwordSelectionConfirmation(length, characters);
+
+    if (confirmation) {
+      //create password
+      return passwordCreation(length, characters); 
+    }
+    else {
+      //if user does not confirm and this function does not return null then the textbox on the screen will display undefined.
+      //this way it will still say "Your Secured Password" or the previous password if the user cancels.
+      return null;
+    }
   } 
   else {
-    //if user cancels and this function does not return null than the textbox on the screen will display undefined.
+    //if user cancels and this function does not return null then the textbox on the screen will display undefined.
     //this way it will still say "Your Secured Password" or the previous password if the user cancels.
     return length;
   }
