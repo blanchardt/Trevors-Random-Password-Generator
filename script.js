@@ -8,7 +8,7 @@ function generatePassword() {
   if (length !== null) {
     //get an array of boolean values to determine what charaters the user wants.
     //bool array = [lowercase, uppercase, numbers, special characters]
-    var characters = passwordCharaterTypes();
+    var characters = passwordCharacterTypes();
     //ask user to confirm their selections
     var confirmation = passwordSelectionConfirmation(length, characters);
 
@@ -64,7 +64,7 @@ function passwordLength() {
 }
 
 //create a function to ask the user a series of questions to determine how to generate the password.
-function passwordCharaterTypes() {
+function passwordCharacterTypes() {
   //run an infinite loop until a user hits ok to one of the 4 following prompts.
   //loop will end when it hits a line that returns a value.
   while(true) {
@@ -92,6 +92,54 @@ function passwordSelectionConfirmation (length, characters) {
   message += "\n\nHit Ok to confirm or Cancel to cancel.";
   return window.confirm(message);
 }
+
+//Create a function that will generate a password based off the criterias that the user gave.
+function passwordCreation(length, characters) {
+  //define variables
+  //create an array to store the characters that can be used in the password.
+  var passwordCharacters = [];
+  //Went to https://bobbyhadz.com/blog/javascript-check-if-string-contains-special-characters to learn about regular expressions.
+  var lowerCriteria = /[a-z]/;;
+  var upperCriteria = /[A-Z]/;;
+  var numberCriteria = /[0-9]/;;
+  var specialCriteria = /[ !"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;;
+
+  //add necessary characters to the array.
+  //lowercase, 26
+  if (characters[0]) {
+    passwordCharacters.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+  }
+  //uppercase, 26
+  if (characters[1]) {
+    passwordCharacters.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+  }
+  //numbers, 10
+  if (characters[2]) {
+    passwordCharacters.push("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+  }
+  //special, 33
+  if (characters[3]) {
+    passwordCharacters.push(" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~")
+  }
+  while (true) {
+    var passwordString = "";
+
+    //create the password
+    for (var i = 0; i < length; i++) {
+      var index = Math.floor(Math.random() * passwordCharacters.length);
+      passwordString += passwordCharacters[index];
+    }
+
+    //check to see if the created password meets the criteria, if it does exit the function by returning it, otherwise generate a new password.
+    if ((!characters[0] || lowerCriteria.test(passwordString)) &&
+    (!characters[1] || upperCriteria.test(passwordString)) &&
+    (!characters[2] || numberCriteria.test(passwordString)) &&
+    (!characters[3] || specialCriteria.test(passwordString))) {
+      return passwordString;
+    }
+  }
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
