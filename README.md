@@ -5,7 +5,11 @@ Modify the starter code for a password generator.
 The page is set up so that a user can press a button and be prompted with some questions.  It will then create a  random password 
 based off the prompts the user gave.  Once the password is created it will populate the box in the center of the screen with the 
 created password.  
-Desktop:    
+Desktop:   
+Page with password already generated:  
+![The page with the password ")GC/L2'EYi}1" generated.](./assets/images/page_with_password.png)  
+Asking the first prompt:  
+![First prompt which is asking the user to "How many characters would you like your password to contain.  Please input a number between 8 and 128".](./assets/images/first_prompt.png)  
 
 ## How to Get to the Page
 The link to the repo for this project is located at: https://github.com/blanchardt/week-3-challenge  
