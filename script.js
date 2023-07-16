@@ -44,6 +44,8 @@ function passwordLength() {
       //validation that it is a number between 8 and 128.
       //Went to https://stackoverflow.com/questions/18042133/check-if-input-is-number-or-letter-javascript to find info on how to check 
       //if user input is a number or a charater/string.  Also credited in the README file.
+      /*Greg Peckory, et al. “Check If Input Is Number or Letter Javascript.” Stack Overflow, 4 Aug. 2013, 
+          stackoverflow.com/questions/18042133/check-if-input-is-number-or-letter-javascript. */
       if (isNaN(length)) {
         window.alert("Password length must be a number.  Please try again.");
       }
@@ -99,6 +101,9 @@ function passwordCreation(length, characters) {
   //create an array to store the characters that can be used in the password.
   var passwordCharacters = [];
   //Went to https://bobbyhadz.com/blog/javascript-check-if-string-contains-special-characters to learn about regular expressions.
+  //also credited in the README file.
+  /*Hadzhiev, Borislav. “Check If String Contains Special Characters in JavaScript.” Bobbyhadz, 1 Jan. 2023, 
+      bobbyhadz.com/blog/javascript-check-if-string-contains-special-characters. */
   var lowerCriteria = /[a-z]/;;
   var upperCriteria = /[A-Z]/;;
   var numberCriteria = /[0-9]/;;
