@@ -89,8 +89,28 @@ function passwordCharacterTypes() {
 //ask the user to confirm there selection and return the value
 //characters = [lowercase, uppercase, numbers, special characters]
 function passwordSelectionConfirmation (length, characters) {
+  //define variables to use in the message.
+  var lowerCharacters = "no";
+  var upperCharacters = "no";
+  var numberCharacters = "no";
+  var specialCharacters = "no";
+
+  //check if the varaibles need to say yes instead of no.
+  if (characters[0]) {
+    lowerCharacters = "yes";
+  }
+  if (characters[1]) {
+    upperCharacters = "yes";
+  }
+  if (characters[2]) {
+    numberCharacters = "yes";
+  }
+  if (characters[3]) {
+    specialCharacters = "yes"
+  }
+
   var message = "Please confirm that you want to create a password using the rules shown below.\n\nLength: " + length + "\n";
-  message += "Lowercase: " + characters[0] + "\nUppercase: " + characters[1] + "\nNumbers: " + characters[2] + "\nSpecial Characters: " + characters[3];
+  message += "Lowercase: " + lowerCharacters + "\nUppercase: " + upperCharacters + "\nNumbers: " + numberCharacters + "\nSpecial Characters: " + specialCharacters;
   message += "\n\nHit Ok to confirm or Cancel to cancel.";
   return window.confirm(message);
 }
