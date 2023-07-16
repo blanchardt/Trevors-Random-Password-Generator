@@ -12,8 +12,8 @@ Asking the first prompt:
 ![First prompt which is asking the user to "How many characters would you like your password to contain.  Please input a number between 8 and 128".](./assets/images/first_prompt.png)  
 
 ## How to Get to the Page
-The link to the repo for this project is located at: https://github.com/blanchardt/week-3-challenge  
-You can use this link to get to the live site: https://blanchardt.github.io/week-3-challenge/
+The link to the repo for this project is located at: https://github.com/blanchardt/Trevors-Random-Password-Generator   
+You can use this link to get to the live site: https://blanchardt.github.io/Trevors-Random-Password-Generator/  
 
 ## Credits
 Modified by: Trevor Blanchard  
