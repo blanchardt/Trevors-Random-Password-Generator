@@ -7,9 +7,15 @@ based off the prompts the user gave.  Once the password is created it will popul
 created password.  
 Desktop:   
 Page with password already generated:  
-![The page with the password ")GC/L2'EYi}1" generated.](./assets/images/page_with_password.png)  
+![The page with the password "om!n,gLr9dh-" generated.](./assets/images/page_with_password.png) 
 Asking the first prompt:  
 ![First prompt which is asking the user to "How many characters would you like your password to contain.  Please input a number between 8 and 128".](./assets/images/first_prompt.png)  
+Rest of the prompts:  
+![Alert box asking: Would you like lowercase characters?](./assets/images/second_prompt.png)  
+![Alert box asking: Would you like uppercase characters?](./assets/images/third_prompt.png)  
+![Alert box asking: Would you like numbers?](./assets/images/fourth_prompt.png)  
+![Alert box asking: Would you like special Characters?](./assets/images/fifth_prompt.png)  
+![Alert box asking to confirm the selections you have chosen](./assets/images/confirmation.png)  
 
 ## How to Get to the Page
 The link to the repo for this project is located at: https://github.com/blanchardt/Trevors-Random-Password-Generator   
