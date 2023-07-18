@@ -37,7 +37,7 @@ function passwordLength() {
   while(true)
   {
     //give promp and ask for user input.
-    var length = window.prompt("How many characters would you like your password to contain.\nPlease input a number between 8 and 128");
+    var length = window.prompt("How many characters would you like your password to contain.\nPlease input a number between 8 and 128.\nHit Ok to confirm and Cancel to cancel.");
 
     //Check if user cancelled the prompt.
     if (length !== null) {
@@ -124,10 +124,10 @@ function passwordCreation(length, characters) {
   //also credited in the README file.
   /*Hadzhiev, Borislav. “Check If String Contains Special Characters in JavaScript.” Bobbyhadz, 1 Jan. 2023, 
       bobbyhadz.com/blog/javascript-check-if-string-contains-special-characters. */
-  var lowerCriteria = /[a-z]/;;
-  var upperCriteria = /[A-Z]/;;
-  var numberCriteria = /[0-9]/;;
-  var specialCriteria = /[ !"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;;
+  var lowerCriteria = /[a-z]/;
+  var upperCriteria = /[A-Z]/;
+  var numberCriteria = /[0-9]/;
+  var specialCriteria = /[ !"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;
 
   //add necessary characters to the array.
   //lowercase, 26
